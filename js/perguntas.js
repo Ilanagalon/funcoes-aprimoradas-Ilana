@@ -5,7 +5,7 @@
             {
                 texto: "Plásticos,papelão,vidro,alumínio",
                 afirmacao: [
-                    "Parabéns você acertou, esses são os lixos recicláveis ",
+                    "Parabéns você acertou, esses são os lixos recicláveis ", "Parabéns você fez a escolha correta sobre os lixos recicláveis",
                 ]
             },
             {
@@ -21,7 +21,7 @@
         alternativas: [
             {
                 texto: "Polipropileno(cabide), polietileno(garrafas de água)",
-                afirmacao:[]
+                afirmacao:[
                  "Esses são os plásticos corretos para fazer o reciclagem",
             ]
             },
@@ -70,4 +70,4 @@
             }
         ]
     },
-];
+]
