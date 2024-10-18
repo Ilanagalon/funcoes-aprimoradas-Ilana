@@ -15,49 +15,39 @@ let perguntaAtual;
 let historiaFinal = "";
 
 function mostraPergunta() {
-    if(atual >= perguntas.length) {
+    if (atual >= perguntas.length) {
         mostraResultado();
         return;
     }
-
-    perguntaAtual = perguntas[atual]
+    perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
     caixaAlternativas.textContent = "";
-    mostraAlternativa();
-
+    mostraAlternativas();
 }
 
-function mostraAlternativa() {
-    for (const alternativas of perguntaAtual.alternativas) {
-        const botaoAlternativas = document.createElement("buttom");
-        botaoAlternativas.textContent = alternativas.texto;
-        botaoAlternativas.addEventListener("click",() => respostaSelecionada(alternativas));
+function mostraAlternativas(){
+    for(const alternativa of perguntaAtual.alternativas) {
+        const botaoAlternativas = document.createElement("button");
+        botaoAlternativas.textContent = alternativa.texto;
+        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
         caixaAlternativas.appendChild(botaoAlternativas);
     }
 }
 
 function respostaSelecionada(opcaoSelecionada) {
-    const afirmacoes =  aleatorio(opcaoSelecionada.afirmacao);
-    historiaFinal += afirmacoes + "";
+    const afirmacoes = opcaoSelecionada.afirmacao;
+    historiaFinal += afirmacoes + " ";
     atual++;
     mostraPergunta();
 }
 
 function mostraResultado() {
-    caixaPerguntas.textContent = "em 2049..."
+    caixaPerguntas.textContent = "Parabéns você acertou, esses são os lixos recicláveis Esses são os plásticos corretos para fazer o reciclagem Essa é a forma correta de separação Parabéns, você acertou essa é a afirmação correta Essa é a resposta certa parabéns";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = "";
-    botaoJogarNovamente. addEventListener("click", jogarnovamente);
-}
-
-function jogarnovamente(){
-    atual = 0;
-    historiaFinal = "";
-    mostraPergunta();
 }
 
 mostraPergunta();
-
 
 
 
