@@ -2,6 +2,7 @@ import { aleatorio } from "./aleatorio.js";
 import { perguntas } from "./perguntas.js";
 
 
+
 const caixaPrincipal = document.querySelector(".caixa-principal");
 const caixaPerguntas = document.querySelector(".caixa-perguntas");
 const caixaAlternativas = document.querySelector(".caixa-alternativas");
@@ -45,7 +46,22 @@ function mostraResultado() {
     caixaPerguntas.textContent = "Parabéns você acertou, esses são os lixos recicláveis Esses são os plásticos corretos para fazer o reciclagem Essa é a forma correta de separação Parabéns, você acertou essa é a afirmação correta Essa é a resposta certa parabéns";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = "";
+    caixaResultado. classList. add ("mostrar");
+    botaoJogarNovamente. addEventListener("click", jogarNovamente);
 }
+
+function jogarNovamente{
+    atual = 0;
+    historiaFinal = "";
+    caixaResultado.classList.remove("mostrar");
+    mostraPergunta();
+}
+
+
+
+
+
+
 
 mostraPergunta();
 
